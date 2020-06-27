@@ -9,7 +9,8 @@ trait ResponseAPI
      * 
      * @param   string          $message
      * @param   array|object    $data
-     * @param   integer         $statusCode   
+     * @param   integer         $statusCode
+     * @param   boolean         $isSuccess            
      */
     public function coreResponse($message, $data = null, $statusCode, $isSuccess = true)
     {
