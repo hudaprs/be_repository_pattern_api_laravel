@@ -56,7 +56,7 @@ class UserRepository implements UserInterface
             return $this->success(
                 $id ? "User updated"
                     : "User created",
-                $user);
+                $user, $id ? 200 : 201);
         } catch(\Exception $e) {
             DB::rollBack();
             return $this->error($e->getMessage(), $e->getCode());
