@@ -17,7 +17,6 @@ class UserRepository implements UserInterface
     {
         try {
             $users = User::all();
-            throw new \Exception("Something went wrong", 500);
             return $this->success("All Users", $users);
         } catch(\Exception $e) {
             return $this->error($e->getMessage(), $e->getCode());
