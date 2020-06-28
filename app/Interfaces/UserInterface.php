@@ -2,7 +2,7 @@
 
 namespace App\Interfaces;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
 
 interface UserInterface
 {
@@ -27,14 +27,14 @@ interface UserInterface
     /**
      * Create | Update user
      * 
-     * @param   \Illuminate\Http\Request    $request
-     * @param   integer                     $id
+     * @param   \App\Http\Requests\UserRequest    $request
+     * @param   integer                           $id
      * 
      * @method  POST    api/users       For Create
      * @method  PUT     api/users/{id}  For Update     
      * @access  public
      */
-    public function requestUser(Request $request, $id);
+    public function requestUser(UserRequest $request, $id = null);
 
     /**
      * Delete user
