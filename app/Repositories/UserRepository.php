@@ -15,18 +15,27 @@ class UserRepository implements UserInterface
 
     public function getAllUsers()
     {
-        $users = User::all();
-        return $this->success("All Users", $users);
+        try {
+            $users = User::all();
+            throw new \Exception("Something went wrong", 500);
+            return $this->success("All Users", $users);
+        } catch(\Exception $e) {
+            return $this->error($e->getMessage(), $e->getCode());
+        }
     }
 
     public function getUserById($id)
     {
-        $user = User::find($id);
-        
-        // Check the user
-        if(!$user) return $this->error("No user with ID $id", 404);
+        try {
+            $user = User::find($id);
+            
+            // Check the user
+            if(!$user) return $this->error("No user with ID $id", 404);
 
-        return $this->success("User Detail", $user);
+            return $this->success("User Detail", $user);
+        } catch(\Exception $e) {
+            return $this->error($e->getMessage(), $e->getCode());
+        }
     }
 
     public function requestUser(UserRequest $request, $id = null)
