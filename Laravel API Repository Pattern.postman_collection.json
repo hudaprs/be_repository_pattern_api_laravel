@@ -1,0 +1,143 @@
+{
+    "info": {
+        "_postman_id": "5c6dcba1-cd25-460d-8938-5e0310b54b03",
+        "name": "Laravel API Repository Pattern",
+        "description": "Laravel API Repository Pattern",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Get All Users",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8000/api/users",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "api",
+                        "users"
+                    ]
+                },
+                "description": "Get All Users"
+            },
+            "response": []
+        },
+        {
+            "name": "Get User by ID",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8000/api/users/1",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "api",
+                        "users",
+                        "1"
+                    ]
+                },
+                "description": "Get User by ID"
+            },
+            "response": []
+        },
+        {
+            "name": "Create a new user",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\" : \"Uzumaki Naruto\",\n    \"email\" : \"uzumaki_naruto@konohagakure.co.jp\",\n    \"password\": \"password\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8000/api/users",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "api",
+                        "users"
+                    ]
+                },
+                "description": "Create a new user"
+            },
+            "response": []
+        },
+        {
+            "name": "Update User by ID",
+            "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\": \"Uchiha Sasuke\",\n    \"email\": \"uchiha_sasuke@konohagakure.co.jp\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8000/api/users/23",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "api",
+                        "users",
+                        "23"
+                    ]
+                },
+                "description": "Update User by ID"
+            },
+            "response": []
+        },
+        {
+            "name": "Delete User By ID",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8000/api/users/10",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "api",
+                        "users",
+                        "10"
+                    ]
+                },
+                "description": "Delete User By ID"
+            },
+            "response": []
+        }
+    ],
+    "protocolProfileBehavior": {}
+}
